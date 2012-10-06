@@ -2,14 +2,21 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ProductService;
 import org.shop.data.Product;
 import org.shop.repository.ProductRepository;
 
+@Named
+@Singleton
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository repository;
 
+    @Inject
     public ProductServiceImpl(ProductRepository repository) {
         super();
         this.repository = repository;

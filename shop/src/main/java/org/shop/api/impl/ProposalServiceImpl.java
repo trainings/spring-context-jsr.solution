@@ -2,6 +2,10 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ProductService;
 import org.shop.api.ProposalService;
 import org.shop.api.SellerService;
@@ -11,14 +15,19 @@ import org.shop.data.Seller;
 import org.shop.data.State;
 import org.shop.repository.ProposalRepository;
 
+@Named
+@Singleton
 public class ProposalServiceImpl implements ProposalService {
 
     private ProposalRepository repository;
     
+    @Inject
     private SellerService sellerService;
     
+    @Inject
     private ProductService productService;
     
+    @Inject
     public ProposalServiceImpl(ProposalRepository repository) {
         super();
         this.repository = repository;

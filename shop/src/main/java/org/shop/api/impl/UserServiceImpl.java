@@ -2,12 +2,19 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.UserService;
 import org.shop.data.User;
 import org.shop.repository.UserRepository;
 
+@Named
+@Singleton
 public class UserServiceImpl implements UserService {
 
+    @Inject
     private UserRepository repository;
 
     /* (non-Javadoc)

@@ -2,12 +2,19 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.SellerService;
 import org.shop.data.Seller;
 import org.shop.repository.SellerRepository;
 
+@Named
+@Singleton
 public class SellerServiceImpl implements SellerService {
-    
+
+    @Inject
     private SellerRepository repository;
 
     /* (non-Javadoc)

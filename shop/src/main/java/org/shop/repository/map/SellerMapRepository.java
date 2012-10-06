@@ -3,9 +3,14 @@ package org.shop.repository.map;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.data.Seller;
 import org.shop.repository.SellerRepository;
 
+@Named
+@Singleton
 public final class SellerMapRepository extends AbstractMapRepository<Seller> implements SellerRepository {
     
     /* (non-Javadoc)

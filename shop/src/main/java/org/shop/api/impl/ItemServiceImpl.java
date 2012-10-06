@@ -2,10 +2,16 @@ package org.shop.api.impl;
 
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ItemService;
 import org.shop.data.Item;
 import org.shop.repository.ItemRepository;
 
+@Named
+@Singleton
 public class ItemServiceImpl implements ItemService {
     
     /** The item repository. */
@@ -16,6 +22,7 @@ public class ItemServiceImpl implements ItemService {
      *
      * @param repository the item repository
      */
+    @Inject
     public ItemServiceImpl(ItemRepository repository) {
         super();
         this.repository = repository;

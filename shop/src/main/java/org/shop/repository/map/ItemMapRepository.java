@@ -2,10 +2,15 @@ package org.shop.repository.map;
 
 import java.util.List;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.apache.commons.collections.Predicate;
 import org.shop.data.Item;
 import org.shop.repository.ItemRepository;
 
+@Named
+@Singleton
 public class ItemMapRepository extends AbstractMapRepository<Item> implements ItemRepository {
 
     /* (non-Javadoc)

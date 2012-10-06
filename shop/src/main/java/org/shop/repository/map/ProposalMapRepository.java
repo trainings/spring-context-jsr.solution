@@ -2,10 +2,15 @@ package org.shop.repository.map;
 
 import java.util.List;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.apache.commons.collections.Predicate;
 import org.shop.data.Proposal;
 import org.shop.repository.ProposalRepository;
 
+@Named
+@Singleton
 public class ProposalMapRepository extends AbstractMapRepository<Proposal> implements ProposalRepository {
 
     /* (non-Javadoc)

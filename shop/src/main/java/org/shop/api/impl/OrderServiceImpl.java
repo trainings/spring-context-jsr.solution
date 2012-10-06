@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ItemService;
 import org.shop.api.OrderService;
 import org.shop.data.Item;
@@ -12,19 +16,16 @@ import org.shop.data.Proposal;
 import org.shop.data.User;
 import org.shop.repository.OrderRepository;
 
+@Named
+@Singleton
+
 public class OrderServiceImpl implements OrderService {
 
+    @Inject
     private OrderRepository orderRepository;
     
+    @Inject
     private ItemService itemService;
-    
-    public void setOrderRepository(OrderRepository orderRepository) {
-        this.orderRepository = orderRepository;
-    }
-
-    public void setItemService(ItemService itemService) {
-        this.itemService = itemService;
-    }
 
     @Override
     public Long createOrder(User user, Item... items) {

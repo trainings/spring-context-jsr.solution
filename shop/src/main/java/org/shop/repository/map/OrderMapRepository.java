@@ -2,10 +2,15 @@ package org.shop.repository.map;
 
 import java.util.List;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.apache.commons.collections.Predicate;
 import org.shop.data.Order;
 import org.shop.repository.OrderRepository;
 
+@Named
+@Singleton
 public class OrderMapRepository extends AbstractMapRepository<Order> implements OrderRepository {
 
     /* (non-Javadoc)

@@ -1,2 +1,2 @@
-spring-context-jsr.lab
-======================
+spring-context-jsr.solution
+===========================

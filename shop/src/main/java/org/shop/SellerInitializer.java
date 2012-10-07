@@ -5,18 +5,27 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.SellerService;
 import org.shop.data.Seller;
 
 /**
  * The Seller Initializer util class.
  */
+@Named
+@Singleton
 public class SellerInitializer {
 
     /** The seller service. */
+    @Inject
     private SellerService sellerService;
     
     /** The seller names. */
+    @Resource(name = "sellersMap")
     private Map<Long, String> sellerNames = Collections.emptyMap();
 
     /**

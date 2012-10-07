@@ -1,11 +1,17 @@
 package org.shop;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.UserService;
 import org.shop.data.User;
 
 /**
  * The User Initializer util class.
  */
+@Named
+@Singleton
 public class UserInitializer {
 
     /** The user service. */
@@ -16,6 +22,7 @@ public class UserInitializer {
      *
      * @param userService the user service
      */
+    @Inject
     public UserInitializer(UserService userService) {
         super();
         this.userService = userService;

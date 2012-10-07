@@ -3,12 +3,19 @@ package org.shop.repository.factory;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.data.User;
 import org.shop.repository.UserRepository;
 import org.shop.repository.map.AbstractMapRepository;
+import org.springframework.context.annotation.Bean;
 
+@Named
+@Singleton
 public final class UserRepositoryFactory {
     
+    @Bean
     public UserRepository createUserRepository() {
         return new UserMapRepository();
     }

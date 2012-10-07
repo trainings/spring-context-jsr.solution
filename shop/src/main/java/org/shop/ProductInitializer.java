@@ -1,5 +1,9 @@
 package org.shop;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ProductService;
 
 import org.shop.common.Products;
@@ -8,6 +12,8 @@ import org.shop.data.Product;
 /**
  * The Product Initializer util class.
  */
+@Named
+@Singleton
 public final class ProductInitializer {
     
     /** The product service. */
@@ -18,6 +24,7 @@ public final class ProductInitializer {
      *
      * @param productService the product service
      */
+    @Inject
     public ProductInitializer(ProductService productService) {
         super();
         this.productService = productService;

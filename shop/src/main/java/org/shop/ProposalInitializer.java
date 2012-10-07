@@ -1,5 +1,9 @@
 package org.shop;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+import javax.inject.Singleton;
+
 import org.shop.api.ProductService;
 
 import org.shop.api.ProposalService;
@@ -10,23 +14,28 @@ import org.shop.data.Seller;
 /**
  * The Proposal Initializer util class.
  */
+@Named
+@Singleton
 public class ProposalInitializer {
     
     /** The product service. */
+    @Inject
     private ProductService productService;
     
     /** The proposal service. */
+    @Inject
     private ProposalService proposalService;
     
     /** The seller service. */
+    @Inject
     private SellerService sellerService;
 
     /**
      * Inits the proposals.
      */
     public void initProposals() {
-        Seller amazon = sellerService.getSellerById((long) 0);
-        Seller samsung = sellerService.getSellerById((long) 1);
+        Seller amazon = sellerService.getSellerById((long) 1);
+        Seller samsung = sellerService.getSellerById((long) 2);
         
         Product galaxyTab = productService.getProductsByName(Products.SAMSUNG_GALAXY_TAB).get(0);
         Product kindleFire = productService.getProductsByName(Products.KINDLE_FIRE).get(0);

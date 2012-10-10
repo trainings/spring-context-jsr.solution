@@ -6,8 +6,17 @@ import org.apache.commons.collections.Predicate;
 import org.shop.data.Order;
 import org.shop.repository.OrderRepository;
 
+/**
+ * The Class OrderMapRepository.
+ * 
+ * @author Dzmitry_Naskou
+ */
 public class OrderMapRepository extends AbstractMapRepository<Order> implements OrderRepository {
 
+    public void setSequence(long sequence) {
+        super.sequence = sequence;
+    }
+    
     /* (non-Javadoc)
      * @see org.shop.repository.OrderRepository#getOrderById(java.lang.Long)
      */
@@ -40,15 +49,27 @@ public class OrderMapRepository extends AbstractMapRepository<Order> implements 
         return select(new OrderByUserPredicate(userId));
     }
     
+    /**
+     * The Class OrderByUserPredicate.
+     */
     private class OrderByUserPredicate implements Predicate {
         
+        /** The user id. */
         private Long userId;
 
+        /**
+         * Instantiates a new order by user predicate.
+         *
+         * @param userId the user id
+         */
         private OrderByUserPredicate(Long userId) {
             super();
             this.userId = userId;
         }
 
+        /* (non-Javadoc)
+         * @see org.apache.commons.collections.Predicate#evaluate(java.lang.Object)
+         */
         @Override
         public boolean evaluate(Object input) {
             if (input instanceof Order) {

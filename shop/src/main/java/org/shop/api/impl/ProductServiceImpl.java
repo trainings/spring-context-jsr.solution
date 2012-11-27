@@ -14,7 +14,7 @@ import org.shop.repository.ProductRepository;
 @Singleton
 public class ProductServiceImpl implements ProductService {
 
-    private ProductRepository repository;
+    private final ProductRepository repository;
 
     @Inject
     public ProductServiceImpl(ProductRepository repository) {

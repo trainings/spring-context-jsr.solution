@@ -11,10 +11,23 @@ import org.shop.repository.UserRepository;
 import org.shop.repository.map.AbstractMapRepository;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * A factory for creating UserRepository objects.
+ * 
+ * @author Dzmitry_Naskou
+ * 
+ * @see UserRepository
+ * @see User
+ */
 @Named
 @Singleton
 public final class UserRepositoryFactory {
     
+    /**
+     * Creates a new UserRepository instance.
+     *
+     * @return the user repository
+     */
     @Bean
     public UserRepository createUserRepository() {
         return new UserMapRepository();

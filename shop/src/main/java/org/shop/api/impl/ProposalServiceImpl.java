@@ -19,7 +19,7 @@ import org.shop.repository.ProposalRepository;
 @Singleton
 public class ProposalServiceImpl implements ProposalService {
 
-    private ProposalRepository repository;
+    private final ProposalRepository repository;
     
     @Inject
     private SellerService sellerService;
